@@ -63,3 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Add React-Rails support
 gem 'react-rails'
+
+# Add Bootstrap support
+gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap-sass'

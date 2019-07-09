@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'bootstrap-4.3.1-dist/css/bootstrap.css';
+@import 'bootstrap-4.3.1-dist/css/bootstrap-grid.css';
+@import 'bootstrap-4.3.1-dist/css/bootstrap-reboot.css';
+
+
+.right-float {
+  float: right;
+}
+
+.padding-all {
+  padding: 15px;
+}
+
+.padding-top {
+  padding-top: 30px;
+}
+
+.thin {
+  max-width: 760px;
+}

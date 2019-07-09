@@ -7,5 +7,9 @@ Rails.application.routes.draw do
     end 
   end 
 
+  namespace :movies do
+    root to: 'movies#index'
+  end
+
   root to: 'home#index'
 end
