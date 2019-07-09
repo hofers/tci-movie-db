@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  movie_id: 1
+  email: MyString
+  date: 2019-07-08
+  rating: MyString
+  comment: MyString
+
+two:
+  movie_id: 1
+  email: MyString
+  date: 2019-07-08
+  rating: MyString
+  comment: MyString
