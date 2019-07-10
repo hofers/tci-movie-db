@@ -6,13 +6,15 @@ class AllMovies extends React.Component {
 
     this.sort = React.createRef();
     this.genre = React.createRef();
+    this.order = React.createRef();
 
     this.state = {
       reviews: [],
       movies: [],
       genres: [],
       currentPage: 1,
-      currentSort: 'original_title.asc',
+      currentSort: 'original_title',
+      currentOrder: '.asc',
       moviePage: [],
     };
   }
@@ -25,26 +27,27 @@ class AllMovies extends React.Component {
       .then((response) => { return response.json() })
       .then((data) => { this.setState({ genres: data.genres }) });
 
-    this.getPageOfMovies(this.state.currentSort, this.state.currentPage, this.genre.current.value);
+    this.getPageOfMovies(this.state.currentSort, this.state.currentOrder, this.state.currentPage, this.genre.current.value);
   }
 
   changeSorts() {
-    this.getPageOfMovies(this.sort.current.value, this.state.currentPage, this.genre.current.value);
+    this.getPageOfMovies(this.sort.current.value, this.order.current.value, this.state.currentPage, this.genre.current.value);
   }
 
   nextPage(sort) {
-    this.getPageOfMovies(sort, this.state.currentPage + 1, this.genre.current.value);
+    this.getPageOfMovies(sort, this.state.currentOrder, this.state.currentPage + 1, this.genre.current.value);
   }
 
   lastPage(sort) {
-    this.getPageOfMovies(sort, this.state.currentPage - 1, this.genre.current.value);
+    this.getPageOfMovies(sort, this.state.currentOrder, this.state.currentPage - 1, this.genre.current.value);
   }
 
-  getPageOfMovies(sort, page, genre) {
+  getPageOfMovies(sort, order, page, genre) {
     this.state.currentPage = page;
     this.state.currentSort = sort;
+    this.state.currentOrder = order;
 
-    return fetch('https://api.themoviedb.org/3/discover/movie?api_key=' + this.DB_API_KEY + '&language=en-US&sort_by=' + sort + '&include_adult=false&include_video=false&page=' + page + genre)
+    return fetch('https://api.themoviedb.org/3/discover/movie?api_key=' + this.DB_API_KEY + '&language=en-US&sort_by=' + sort + order + '&include_adult=false&include_video=false&page=' + page + genre)
       .then((response) => { return response.json() })
       .then((data) => { this.setState({ movies: data.results, moviePage: data }) });
   }
@@ -79,14 +82,18 @@ class AllMovies extends React.Component {
 
     return (
       <div className="container-fluid padding-top">
-        <h2>Browse Movies</h2>
+        <h2>Browse Movies&emsp;&emsp;<a href="/reviews">Browse Reviews</a></h2>
         <div>
           <select ref={this.sort} onChange={() => { this.changeSorts() }}>
-            <option value="original_title.asc">Alphabetical</option>
-            <option value="release_date.asc">Release Date</option>
+            <option value="original_title">Alphabetical</option>
+            <option value="release_date">Release Date</option>
+          </select>
+          <select ref={this.order} onChange={() => { this.changeSorts() }}>
+            <option value=".asc">Ascending</option>
+            <option value=".desc">Descending</option>
           </select>
           <select defaultValue="" ref={this.genre} onChange={() => { this.changeSorts() }}>
-            <option value="">All Genres</option>
+            <option value="">Filter by Genre</option>
             {genres}
           </select>
         </div>

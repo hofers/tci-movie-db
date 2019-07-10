@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     end 
   end 
 
+  namespace :reviews do
+    root to: 'reviews#index'
+  end
+
   namespace :movies do
     root to: 'movies#index'
   end

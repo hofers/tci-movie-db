@@ -12,7 +12,7 @@ class Body extends React.Component {
       <div className="container-fluid">
         <div className="right-float padding-all">
           <h1><a href="/">I aM a DB</a></h1>
-          <h3>of movie reviews</h3>
+          <h4>(of movie reviews)</h4>
         </div>
         <div>
           <AllMovies />

@@ -4,4 +4,4 @@
 # Examples:
 #
 
-movies = Review.create(movie_id: 55245, email: "me@seanhofer.com", date: Date.new(2019,7,7), name: "Movie", rating: 3, comment: "pretty good");
+movies = Review.create(movie_id: 55245, email: "me@seanhofer.com", date: Date.new(2019,7,7), name: "!Women Art Revolution", rating: 3, comment: "pretty good");

@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_233920) do
+ActiveRecord::Schema.define(version: 2019_07_10_200849) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "movie_id"
     t.string "email"
     t.date "date"
-    t.string "rating"
+    t.integer "rating"
     t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
