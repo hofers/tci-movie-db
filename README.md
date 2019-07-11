@@ -1,6 +1,8 @@
 # tci-movie-db
 TCI Code Challenge - Movie Review Database
 
+![screenshot](https://i.imgur.com/GdUVf4I.png)
+
 ## I aM a DB (of movie reviews)
 This is repository for my TCI code challenge app, dubbed "I aM a DB". 
 
