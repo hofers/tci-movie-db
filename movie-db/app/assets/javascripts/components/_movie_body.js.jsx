@@ -60,6 +60,7 @@ class MovieBody extends React.Component {
           <h4>(of movie reviews)</h4>
         </div>
         <div className="container-fluid padding-top">
+          <h3><a href="/">Go back</a></h3>
           <MovieInfo ref={this.movieInfo} id={this.props.props.movie_id} />
           {reviews == 0 ? <div className="padding-top">
             <p>Looks like there are no reviews for this movie yet. Maybe you should write one!</p>
