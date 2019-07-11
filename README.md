@@ -6,7 +6,7 @@ This is repository for my TCI code challenge app, dubbed "I aM a DB".
 
 It's built using react-rails, with the front-end done fully in React with Bootstrap and the back-end in Ruby on Rails. This was my first time actually working on a Rails project and I found it quite fun!
 
-All unit testing is done in Minitest.
+All unit testing is done in Minitest. For UI testing I used Jest.
 
 I used [The Movie DB](https://www.themoviedb.org/documentation/api?language=en)'s API for pulling movie info.
 
