@@ -35,7 +35,7 @@ const AddReview = (props) => {
       <div className="form-group row">
         <label className="col-sm-2 col-form-label">Comment</label>
         <div className="col-sm-10">
-          <input className="form-control" ref={input => formFields.comment = input} placeholder='Comment' />
+          <input type="text" className="form-control" ref={input => formFields.comment = input} placeholder='Comment' />
         </div>
       </div>
       <div className="form-group row">

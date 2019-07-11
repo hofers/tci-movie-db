@@ -63,7 +63,7 @@ class MovieBody extends React.Component {
           <MovieInfo ref={this.movieInfo} id={this.props.props.movie_id} />
           {reviews == 0 ? <div className="padding-top">
             <p>Looks like there are no reviews for this movie yet. Maybe you should write one!</p>
-          </div> : <table className="padding-top table table-striped"><thead><tr><th scope="col">Rating</th><th scope="col">Comment</th><th scope="col">Review Date</th><th scope="col">Posted by</th></tr></thead><tbody>{reviews}</tbody></table>}
+          </div> : <div className="padding-top table-responsive"><table className="table table-striped"><thead><tr><th scope="col">Rating</th><th scope="col">Comment</th><th scope="col">Review Date</th><th scope="col">Posted by</th></tr></thead><tbody>{reviews}</tbody></table></div>}
 
           <AddReview handleFormSubmit={this.handleFormSubmit} movie_id={this.props.props.movie_id} movie={this.movieInfo} />
         </div>
@@ -104,7 +104,7 @@ class MovieInfo extends React.Component {
     }) : null;
 
     return (
-      <div>
+      <div className="padding-top">
         <h1 id="title">{this.state.movie_info["original_title"]}</h1>
         <h3>Originally released: {this.state.movie_info["release_date"]}</h3>
         <h4>Genre(s): {genres}</h4>

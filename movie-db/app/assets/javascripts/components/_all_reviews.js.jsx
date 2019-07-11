@@ -36,7 +36,7 @@ class AllReviews extends React.Component {
           <h2><a href="/">Browse Movies</a>&emsp;&emsp;Browse Reviews</h2>
           {reviews == 0 ? <div>
             <p>Looks like there are no reviews for this movie yet. Maybe you should write one!</p>
-          </div> : <table className="table table-striped"><thead><tr><th scope="col">Title</th><th scope="col">Rating</th><th scope="col">Comment</th><th scope="col">Review Date</th><th scope="col">Posted by</th></tr></thead><tbody>{reviews}</tbody></table>}
+          </div> : <div className="table-responsive"><table className="table table-striped"><thead><tr><th scope="col">Title</th><th scope="col">Rating</th><th scope="col">Comment</th><th scope="col">Review Date</th><th scope="col">Posted by</th></tr></thead><tbody>{reviews}</tbody></table></div>}
         </div>
       </div>
     )

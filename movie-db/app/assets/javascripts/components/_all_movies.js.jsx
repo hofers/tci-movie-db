@@ -84,38 +84,40 @@ class AllMovies extends React.Component {
       <div className="container-fluid padding-top">
         <h2>Browse Movies&emsp;&emsp;<a href="/reviews">Browse Reviews</a></h2>
         <div>
-          <select ref={this.sort} onChange={() => { this.changeSorts() }}>
+          <select className="clickable" ref={this.sort} onChange={() => { this.changeSorts() }}>
             <option value="original_title">Alphabetical</option>
             <option value="release_date">Release Date</option>
           </select>
-          <select ref={this.order} onChange={() => { this.changeSorts() }}>
+          <select className="clickable" ref={this.order} onChange={() => { this.changeSorts() }}>
             <option value=".asc">Ascending</option>
             <option value=".desc">Descending</option>
           </select>
-          <select defaultValue="" ref={this.genre} onChange={() => { this.changeSorts() }}>
+          <select className="clickable" defaultValue="" ref={this.genre} onChange={() => { this.changeSorts() }}>
             <option value="">Filter by Genre</option>
             {genres}
           </select>
         </div>
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">Original Title</th>
-              <th scope="col">Release Date</th>
-              <th scope="col">Genre(s)</th>
-            </tr>
-          </thead>
-          <tbody>{movies}</tbody>
-        </table>
+        <div className="table-responsive">
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Original Title</th>
+                <th scope="col">Release Date</th>
+                <th scope="col">Genre(s)</th>
+              </tr>
+            </thead>
+            <tbody>{movies}</tbody>
+          </table>
+        </div>
 
         <nav aria-label="Page Navigation" className="float-right">
           <span>Page {this.state.currentPage} of {this.state.moviePage.total_pages}</span>
           <ul className="pagination">
-            <li className={this.state.currentPage <= 1 ? "page-item disabled" : "page-item"}>
+            <li className={this.state.currentPage <= 1 ? "clickable page-item disabled" : "clickable page-item"}>
               <a className="page-link" onClick={() => { this.lastPage(this.state.currentSort) }}>Previous</a>
             </li>
 
-            <li className={this.state.currentPage >= this.state.moviePage.total_pages ? "page-item disabled" : "page-item"}>
+            <li className={this.state.currentPage >= this.state.moviePage.total_pages ? "clickable page-item disabled" : "clickable page-item"}>
               <a className="page-link" onClick={() => { this.nextPage(this.state.currentSort) }} >Next</a>
             </li>
           </ul>
