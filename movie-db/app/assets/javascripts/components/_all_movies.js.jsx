@@ -123,6 +123,12 @@ class AllMovies extends React.Component {
           </ul>
         </nav>
 
+        <div>
+          <p>Made by Sean Hofer<br></br>
+            <a href="https://seanhofer.com">seanhofer.com</a>
+          </p>
+        </div>
+
       </div>
     )
   }
